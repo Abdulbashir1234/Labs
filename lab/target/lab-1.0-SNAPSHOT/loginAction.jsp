@@ -47,7 +47,7 @@
                     </tr>
               </table>
             <%}else {%>
-            <h1 style=" color: #ffff33; font-size: 30px;">User does not exists!</h1>
+            <h1 style=" color: #ffff33; font-size: 30px;">User does not exists! </h1>
             <%}%>
             </div>
          </div>

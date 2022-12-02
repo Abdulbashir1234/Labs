@@ -35,9 +35,7 @@
                 </div>
             </div>
         </nav>
-        <div class="LineCenter" >
-            <h1 style=" color: #ffff33; font-size: 60px;">Welcome to our First Website</h1>
-        </div>
+       
         <div id="clock" class="footer"></div>
     </body>
 </html>

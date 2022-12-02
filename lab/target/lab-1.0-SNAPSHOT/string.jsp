@@ -25,7 +25,6 @@
             <div class="container-fluid">
                 <div class="navbar-header navbar-left">                   
                     <a class="button" href="index.jsp">Home</a>
-                    <a class="button" href="logout.jsp">Logout</a>
                 </div>
                  <form class="navbar-form navbar-left" action="string.jsp">
                     <div class="input-group">

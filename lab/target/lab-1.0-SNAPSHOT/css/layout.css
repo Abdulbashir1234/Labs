@@ -1,12 +1,20 @@
 /* 
-    Created on : Nov 22, 2022, 2:53:12 PM
+    Created on : Dec 2, 2022, 1:19:06 PM
     Author     : 236325
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
 body{    
-    background: url(best.jpg)no-repeat center center fixed;
-    letter-spacing: 4px;
+    background:url(best.webp)no-repeat center center fixed;
+    letter-spacing: 2px;
     font-family: Arial, Helvetica, sans-serif;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -51,11 +59,13 @@ body{
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+    box-shadow: 0 0 50px #0ef;
     outline: none;
     color: #fff;
     background-color: #8ea2ad;
     border: none;
-    border-radius: 6px; 
+    border-radius: 6px;
+    
 }
 
 .button:hover {background-color: #3ba2d5;}
@@ -67,18 +77,24 @@ body{
 }
 
 .mytable{
-    font-weight: bolder;
-    border-collapse: collapse;
-    padding: 10px;
-    border: solid 1px;
-    margin: auto;
-    margin-top : 15%;
-    width: 30%;
-    color: #f4f4fc;
+  font-weight: bolder;
+  border-collapse: collapse;
+  margin: auto;
+  margin-top : 5%;
+  width: 250%;
+  color: #f4f4fc;
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background: #000;
+  box-shadow: 0 0 50px #0ef;
+  border-radius: 20px;
+  padding: 40px;
+  overflow: hidden;
 }
 
 td {
-    padding: 10px;
+    padding: 7px;
     color: #f4f4fc;
 }
 
@@ -116,4 +132,9 @@ caption{
     color: #ff3333;
     font-weight: bold;
     font-size: 14px;
+}
+
+.navbar{
+  background: #000;
+  box-shadow: 0 0 50px #0ef;
 }

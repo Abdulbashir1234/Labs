@@ -21,6 +21,7 @@
             <div class="container-fluid">
                 <div class="navbar-header navbar-left">                   
                     <a class="button" href="index.jsp">Home</a>
+                    <a class="button" href="register.jsp">Sign Up</a>
                 </div>
             </div>
         </nav>
@@ -28,17 +29,17 @@
                 <div class="row">
             <form method="POST" action="loginAction.jsp">
                 <table class="mytable">
-                   <thead><th style="text-align: center; font-size: 20px; color: #afeb00;" colspan="2">Sign In</th></thead>
+                   <thead><th style="text-align: center; font-size: 20px; color: #afeb00;" colspan="2">Sign In Here</th></thead>
                     <tr><td>Email: </td><td><input type="text" name="email" placeholder="Enter your email" /></td></tr>
                     <tr><td>Password: </td><td><input type="password" name="password" placeholder="Enter your password" /></td></tr>
                     <tr>
                         <td> </td>
                         <td>
                             <a class="button" href="index.jsp">Cancel</a>
-                            
                             <input class="button" type="submit" value="Sign In" />
+                     
                         </td>
-                    </tr>
+                    </tr> 
                 </table>
             </form>
           </div>

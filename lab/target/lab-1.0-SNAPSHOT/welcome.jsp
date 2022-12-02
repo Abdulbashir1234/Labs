@@ -33,7 +33,12 @@
                 
             }else if(!password.matches(passRegEx)){
                 session.setAttribute("passError", "Incorrect password format");
-                response.sendRedirect("register.jsp");                       
+                response.sendRedirect("register.jsp");
+                
+            }else if(!email.matches(emailRegEx) && !password.matches(passRegEx)){
+                session.setAttribute("emailError", "Incorrect email format");
+                session.setAttribute("passError", "Incorrect password format");
+                response.sendRedirect("register.jsp");
             }else{
                 User user = new User(name, email, password, dob);
                 Users users = new Users();
