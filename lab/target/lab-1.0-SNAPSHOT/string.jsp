@@ -36,7 +36,7 @@
         
         <div class="container-fluid">
             <div class="row">
-                <div class="col-x-2">
+                <div class="col-x-1">
                     <jsp:include page="vowels.jsp" flush="true"/>
                 </div>
             </div>
