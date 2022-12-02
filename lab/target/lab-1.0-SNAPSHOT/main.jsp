@@ -18,7 +18,7 @@
         <script type="text/javascript" src="js/index.js"></script>
         <title>Blogs</title>
     </head>
-    <body onload="startTime()" >
+    <body onload="startTime()" >  
         <% 
             User user = (User) session.getAttribute("user");            
             String text = request.getParameter("blog");
