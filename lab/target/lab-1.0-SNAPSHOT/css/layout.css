@@ -68,6 +68,11 @@ body{
     
 }
 
+@keyframes animate {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
 .button:hover {background-color: #3ba2d5;}
 
 .button:active {
@@ -91,6 +96,19 @@ body{
   border-radius: 20px;
   padding: 40px;
   overflow: hidden;
+  transition: 1s ease-in-out;
+}
+.mytable:hover {
+  animation: animate 1s linear infinite;
+}
+.mytable.active {
+  transform: translateY(-450px);
+}
+.button:hover {
+  animation: animate 1s linear infinite;
+}
+.button.active {
+  transform: translateY(-450px);
 }
 
 td {
@@ -121,6 +139,7 @@ caption{
     bottom: 0;
     width: 100%;
     background-color: #1d1d1d;
+    box-shadow: 0 0 50px #0ef;
     font-size: 36px;
     color: #afeb00;
     padding: 3px;

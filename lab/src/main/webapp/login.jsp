@@ -27,7 +27,7 @@
         </nav>
             <div class="container-fluid">
                 <div class="row">
-            <form method="POST" action="loginAction.jsp">
+            <form method="POST" action="main.jsp">
                 <table class="mytable">
                    <thead><th style="text-align: center; font-size: 20px; color: #afeb00;" colspan="2">Sign In Here</th></thead>
                     <tr><td>Email: </td><td><input type="text" name="email" placeholder="Enter your email" /></td></tr>
