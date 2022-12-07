@@ -8,12 +8,15 @@ package com.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.xml.bind.annotation.*;
 /**
  *
  * @author 236325
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "users")
 public class Users implements Serializable{
+    @XmlElement(name = "user")
     private List<User> users = new ArrayList<>();
 
     public Users() {
@@ -42,5 +45,12 @@ public class Users implements Serializable{
     public void setUsers(List<User> users) {
         this.users = users;
     }   
+    
+    public void remove(User other){
+        users.removeIf(u -> u.match(other));
+    }
+    
+    public void show(){
+        this.users.forEach(u -> System.out.println(u));
+    }
 }
-

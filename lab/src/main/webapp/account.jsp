@@ -59,6 +59,7 @@
                         <td> </td>
                         <td>
                             <input class="button" type="submit" value="Update" />
+                            <a class="button" href="delete.jsp">Delete</a>
                         </td>
                     </tr>
                 </table>

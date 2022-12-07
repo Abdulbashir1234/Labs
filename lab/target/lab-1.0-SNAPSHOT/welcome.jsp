@@ -18,37 +18,32 @@
         <title>Welcome</title>
     </head>
     <body onload="startTime()">
-        <% 
+        <% String filename = application.getRealPath("/WEB-INF/users.xml");%>
+        <jsp:useBean id="userDAO" class="com.model.dao.UserDAO" scope="application">
+            <jsp:setProperty name="userDAO" property="fileName" value="<%=filename%>"/>
+        </jsp:useBean>
+        <%
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String dob = request.getParameter("dob");
+
+            User user = new User(name, email, password, dob);
+            Users users = userDAO.getUsers();
             
-            String emailRegEx = "([a-zA-Z]+)[._-]([a-zA-Z]+)@example.com";
-            String passRegEx = "[A-Z][a-z]{5,15}\\d{1,3}";
+            User userXML = users.user(user.getEmail());
             
-            if(!email.matches(emailRegEx)){               
-                session.setAttribute("emailError", "Incorrect email format");
-                response.sendRedirect("register.jsp");   
-                
-            }else if(!password.matches(passRegEx)){
-                session.setAttribute("passError", "Incorrect password format");
-                response.sendRedirect("register.jsp");
-                
-            }else if(!email.matches(emailRegEx) && !password.matches(passRegEx)){
-                session.setAttribute("emailError", "Incorrect email format");
-                session.setAttribute("passError", "Incorrect password format");
+            if(userXML != null){
+                session.setAttribute("error", "User already exists");
                 response.sendRedirect("register.jsp");
             }else{
-                User user = new User(name, email, password, dob);
-                Users users = new Users();
                 users.add(user);
-
+                userDAO.save(users, filename);
                 session.setAttribute("user", user);
-                session.setAttribute("users", users);
-            }
+            }              
+
         %>
-        <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="navbar-header navbar-left">
             <a class="button" href="logout.jsp">Logout</a>

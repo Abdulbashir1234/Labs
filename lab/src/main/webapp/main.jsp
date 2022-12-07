@@ -19,13 +19,21 @@
         <title>Blogs</title>
     </head>
     <body onload="startTime()" >  
+        <% String filename = application.getRealPath("/WEB-INF/users.xml"); %>
+        <jsp:useBean id="userDAO" class="com.model.dao.UserDAO" scope="application">
+            <jsp:setProperty name="userDAO" property="fileName" value="<%=filename%>"/>
+        </jsp:useBean>
         <% 
             User user = (User) session.getAttribute("user");            
-            String text = request.getParameter("blog");
-            if(text != null){
-                user.add(text);         
-            }
-            List<Blog> blogs = user.getBlogs();
+            //String text = request.getParameter("blog");
+            //if(text != null){
+            //    user.add(text);         
+           // }
+            
+            Users users = userDAO.getUsers();
+           
+            userDAO.update(users, user);
+            
             session.setAttribute("user", user);
         %>
         <nav class="navbar navbar-dark bg-dark">

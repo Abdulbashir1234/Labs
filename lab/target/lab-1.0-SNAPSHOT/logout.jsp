@@ -19,6 +19,7 @@
     <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="navbar-header navbar-left">
+                <% session.invalidate(); %>
             <h1 style=" color: #adff2f; font-size: 15px;">You have been logged out- Thank you!<a class="button" href="index.jsp">Home</a> </h1>                          
                 </div>
             </div>

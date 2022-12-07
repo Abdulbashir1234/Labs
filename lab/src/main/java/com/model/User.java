@@ -6,27 +6,32 @@
 package com.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-
+import javax.xml.bind.annotation.*;
 /**
  *
  * @author 236325
  */
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import javax.xml.bind.annotation.*;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "user")
 public class User implements Serializable{
     private int ID;
     private String name;
     private String email;
     private String password;
     private String DOB;
-    private List<Blog> blogs = new ArrayList();
 
     public User() {
     }
 
     public User(String name, String email, String password, String DOB) {
-        this.ID = (new Random()).nextInt(999);
+        this.ID = (new Random()).nextInt(999999);
         this.name = name;
         this.email = email;
         this.password = password;
@@ -53,17 +58,10 @@ public class User implements Serializable{
         return this.email.equals(email);
     }
     
-    public void add(String text){
-        this.blogs.add(new Blog(blogs.size()+1, text));
-    }
-    
-    public List<Blog> getBlogs() {
-        return blogs;
+    public boolean match(User other){
+        return this.ID == other.ID;
     }
 
-    public void setBlogs(List<Blog> blogs) {
-        this.blogs = blogs;
-    }
 
     public int getID() {
         return ID;
@@ -104,7 +102,14 @@ public class User implements Serializable{
     public void setDOB(String DOB) {
         this.DOB = DOB;
     }
-    
+
+    @Override
+    public String toString() {
+        return  ID + "\t" + name + "\t" + email + "\t" + DOB;
+    }    
+
+    public void add(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
-
